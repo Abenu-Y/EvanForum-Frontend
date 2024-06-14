@@ -1,0 +1,334 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'); */
+
+.auth_outer_container{
+    background-image: url(../../assets//Image/BackPic.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #f8f8f8;
+}
+
+.auth_inner_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 1200px;
+    margin:0 auto;
+    padding-block: 80px;
+    padding-inline: 8px;
+    place-items: center stretch;
+}
+
+
+.btn_container button,.content button{
+    background-color:orange;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 80px;
+    border-radius: 4px;
+    margin-block: 10px;
+    cursor: pointer;
+}
+
+.content button{
+    padding: 10px 40px;
+}
+
+
+.form_container{
+
+    position: relative;
+    z-index: 10;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 30px;
+    box-shadow: 8px 12px 12px rgba(158, 158, 158, 0.12);
+
+}
+form p, form button{
+    text-align: center;
+}
+
+.Atitle p:nth-of-type(1){
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(52,71,103);
+   font-weight: 700;
+}
+.Atitle p:nth-of-type(2){
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(103,116,142);
+   font-weight: 400;
+    margin-block: 10px;
+}
+
+.Atitle p:nth-of-type(2) span ,.btn_container p{
+    /* text-decoration: underline; */
+    color: #da7000;
+    cursor: pointer;
+}
+.btn_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form_container{
+    padding-inline: 40px;
+    overflow: hidden;
+}
+.form_container input{
+    width: 100% ;
+    outline: none;
+    padding: 15px 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    position: relative;
+    box-shadow: none;
+    /* transition: border-bottom  2s ease-in; */
+}
+
+
+.form_container input:focus{
+    border-bottom: 3px solid orange;
+}
+
+
+
+.content > p:nth-child(1){
+    color: #fe8303;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.content >div:nth-of-type(1){
+    font-size: 26px;
+}
+
+.evan_title {
+    background-image: linear-gradient(310deg,#000000, #e33f00);
+    -webkit-text-fill-color: transparent;
+    /* -webkit-background-clip: text; */
+    background-clip: text;
+    color: rgb(75,69,111);
+    font-size: 45px;
+}
+
+.content_description{
+    padding-top: 5px;
+    font-family: 'Poppins',Poppins, sans-serif;
+    color: rgb(101,101,101);
+    font-size: 15px;
+    line-height: 28px;
+   
+}
+
+/* .content_description h4{
+    line-height: 45px;
+} */
+
+.content_description p{
+   padding-bottom: 10px;
+   color: rgb(101,101,101);
+   line-height: 26px;
+   font-size: 14px;
+   /* color: rgb(51,71,103); */
+
+}
+
+
+/*  */
+
+.signUp_title,.signUp_agree{
+    text-align: center;
+}
+.signUp_title p{
+    margin-bottom: 10px;
+}
+.signUp_title p:nth-child(1),.content_description h4{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(51,71,103);
+    font-weight: 700;
+}
+
+.content_description h4{
+    line-height: 45px;
+}
+
+.signUp_title p:nth-child(2){
+    color:rgb(103,116,142);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.signUp_title p:nth-child(2) span{
+    color:rgb(218,112,0);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.signUp_form .name{
+    display: flex;
+    justify-content: space-between;
+}
+.signUp_form input {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(33,37,41);
+}
+.signUp_form .name input {
+   width: 49%;
+   /* border: 1px solid grey; */
+}
+
+.signUp_form .name input:focus{
+    border-bottom: 3px solid orange;
+    transition: border-color .15s ease-in-out;
+}
+
+.signUp_form .signUp_btn button {
+    width: 100%;
+    padding-block: 10px;
+    border: none;
+    background-color: #516CF0;
+    color:white;
+    border-radius: 4px;
+    margin-block: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    cursor: pointer;
+}
+
+#FirstName{
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.signUp_agree{
+    padding-block: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: rgb(108,117,125);
+}
+
+.signUp_agree span {
+    font-size: 14px;
+    color: #516CF0;
+    line-height: 21px;
+
+}
+
+.signUp_agree p:nth-child(2){
+    color: rgb(218,112,0);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+/** sign-up page for eye in off  */
+.password_toggle_container {
+    position: relative;
+  
+  }
+  
+.password_toggle_container .pwd_toggle{
+    position: absolute;
+    color: #cccccc;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+
+  .error_message{
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    color:lightcoral;
+    padding-bottom: 10px;
+  }
+
+  .ThreeDotsCenter{
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  /* ******** fade property ************ */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-40%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slidein {
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ******** fade property ************ */
+
+  @media screen and (max-width:315px) {
+
+    .auth_inner_container{
+        padding-inline: 0;
+    }
+    .form_container{
+        padding-inline: 10px;
+    }
+  }
+
+  @media screen and (max-width:576px) {
+    .form_container{
+        height: 600px;
+    }
+
+    .signUp_form .name{
+        flex-direction: column;
+    }
+    .signUp_form .name input{
+        width: 100%;
+    }
+    .evan_title h2{
+        font-size: 30px;
+    }
+    
+  }
+
+  @media screen and (max-width:768px) {
+    .auth_inner_container{
+        grid-template-columns: 1fr;
+        padding-inline: 30px;
+        width: 100%;
+        gap: 60px;
+    }
+
+    .form_container{
+        margin-right: 0;
+    }
+  }
+
+  

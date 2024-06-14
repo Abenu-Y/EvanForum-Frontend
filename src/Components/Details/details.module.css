@@ -1,0 +1,230 @@
+.details_container{
+    max-width: 1000px;
+    margin: 60px auto;
+    color: #182738;
+    color: #555555;
+    position: relative;
+    /* z-index: 1; */
+}
+.backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  .warning{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 40%;
+    height: 25vh;
+    top: 35%;
+    left: 25%;
+    background-color: lightcoral;
+    background-color: #fff;
+    border: 0.5px inset lightsalmon;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    padding: 0 10px;
+    
+  }  
+
+  .warning >div{
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .warning button {
+    border:none;
+    cursor: pointer;
+    background-color: #516CF0;
+    border-radius: 4px;
+    padding:8px 30px ;
+    color: #fff;
+    margin-right: 10px;
+    margin-top: 4px;
+    
+  }
+
+  .warning p{
+   color: lightcoral;
+   /* text-align: center; */
+   display: flex;
+   justify-content: center;
+  }  
+
+.threeDot_Container{
+    position: relative;
+}
+
+.three_dots_menu{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    cursor: pointer;
+    z-index: 25;
+}
+
+.three_dots_menu_list{
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    background-color: lightgrey;
+    border-radius: 4px;
+    box-shadow: 8px 12px 12px rgba(158, 158, 158, 0.12);
+    z-index: 50;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    z-index: 30;
+}
+
+.three_dots_menu_list button{
+    background-color: transparent;
+    border: none;
+    font-style: 14px;
+    padding: 10px 30px 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.three_dots_menu_list button:hover{
+  background-color: lightblue;
+  background-color: #516CF0;
+  color: #fff;
+}
+
+.question_bold{
+    font-size: 22px;
+    font-weight:600;
+    line-height: 24px;
+}
+
+.question_in_brief{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 550;
+    padding-block: 10px;
+}
+
+.question_in_detail{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.answers_from_community{
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 550;
+    margin-top: 10px;
+}
+
+.new_answer_container {
+    position: relative;
+}
+
+.new_answer_container >div:nth-child(1){
+  text-align: center;
+}
+
+.new_answer_container >div:nth-child(1){
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 550;
+}
+
+.goto{
+    display: flex;
+    justify-content: center;
+} 
+
+.goto button {
+    border: none;
+    background-color: #fff;
+    /* border: 1px solid lightcoral; */
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 0;
+    color: #fe8303;
+
+
+}
+
+.new_answer_container form button {
+    border: none;
+    color: #fff;
+    background-color: #516CF0;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+} 
+
+.new_answer_container form input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 20px;
+    padding-block: 10px;
+    margin-bottom: 15px;
+    color: rgb(33,37,41);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.new_answer_container form button:hover{
+    background-color: #fe8303;
+} 
+
+.new_answer_container svg{
+    position:fixed;
+    display: flex;
+    height: 100vh;
+    bottom: 60px;
+    left: 600px;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.red_placeholder::placeholder {
+    color: red;
+  }
+
+
+  .three_dots_menu_list.disp{
+    /* display: block !important; */
+    visibility: visible;
+  }
+
+ 
+@media(max-width:340px){
+    .question_bold{
+        font-size: 16px;
+    }
+    
+    .answers_from_community,.new_answer_container >div:nth-child(1),.goto{
+        font-size: 12px;
+    }
+}
+@media(max-width:1000px){
+    .details_container{
+        padding: 0 50px;
+    }
+}

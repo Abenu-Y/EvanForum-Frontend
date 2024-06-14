@@ -1,0 +1,133 @@
+.question_wrapper{
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* position: relative; */
+    /* background-image: url('../../assets/Image/why1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150vh; */
+    background-color: #EDF5FD;
+
+}
+.question_wrapper >div ul li{
+    font-size: 12x;
+    line-height: 22px;
+    color: #3b4045;
+}
+
+.question_background{
+    background-image: url('../../assets/Image/why.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* width: 100%; */
+    height: 50vh;
+
+}
+
+.question_wrapper >div:nth-child(1){
+    background-color: #EDF5FD;
+}
+.question_wrapper >div:nth-child(1)  div{
+    /* color: red; */
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.question_wrapper >div:nth-child(2) div:nth-child(1){
+    margin-top: 100px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.go{
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    color: lightseagreen;
+    /* background-color: lightblue; */
+}
+
+.question_form_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-radius: 8px;
+    /* background-color: lightblue; */
+    box-shadow: 8px 12px 12px rgba(158, 158, 158, 0.12);
+    /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); */
+}
+
+.question_form_container form {
+    width: 90%;
+}
+
+#input , textarea{
+    width: 100% !important;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 20px;
+    /* background-color: red; */
+}
+
+#input{
+    padding-block: 15px;
+    margin-bottom: 20px;
+    color: rgb(33,37,41);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+
+}
+
+textarea{
+    height: 200px;
+    outline: none;
+    padding-top: 20px;
+}
+
+.question_form_container form button {
+    border: none;
+    color: #fff;
+    background-color: #516CF0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.question_form_container form button:hover{
+    background-color: #fe8303;
+}
+
+.disperror{
+    font-size:18px !important;
+    color:lightcoral;
+    padding-bottom:8px;
+}
+
+.question_wrapper svg{
+    position:fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:460px){
+    .question_wrapper >div:nth-child(1) {
+        font-size: 13px;
+        padding-left: 25px;
+    }
+
+}

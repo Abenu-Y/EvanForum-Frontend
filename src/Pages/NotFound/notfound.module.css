@@ -1,0 +1,32 @@
+.notfoundBackground{
+   background-image: url('../../assets/Image/not.jpg');
+   background-repeat: no-repeat;
+   height: 70vh;
+   width: 100%;
+   background-position: center;
+   background-size:contain;
+
+}
+
+.back{
+    position: absolute;
+    top: 270px;
+    left: 770px;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 12%;
+}
+
+.homepage{
+   
+    background-color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.homepage:hover{
+    background-color:#516CF0;
+    color: #fff;
+    transition: 0.4s;
+}

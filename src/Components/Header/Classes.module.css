@@ -1,0 +1,113 @@
+
+.header_outer_container{
+    position: sticky;
+    box-shadow: 0 2px 4px rgba(81, 107, 152, 0.16);
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.header_inner_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header_inner_container a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.header_inner_container a:hover{
+   color: #FE8402;
+}
+
+.logo_container a img{
+    max-width: 90%;
+}
+
+.header_links{
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+}
+
+.header_links button{
+    background-color: #516CF0;
+    padding: 8px 25px!important;
+    margin: 0;   
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header_canvas_inner_container{
+    position: fixed;
+    top: 81px;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 78;
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: #fff;
+    /* background-color: lightblue; */
+    box-shadow: 0 2px 4px rgba(81, 107, 152, 0.16);
+    display: none;
+    overflow-y: auto;
+    transition: 0.5s;
+}
+
+.headerbackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    z-index: 70;
+}
+
+.header_canvas_inner_container.display {
+    display:block !important;
+}
+
+.header_canvas_inner_container >div{
+    padding-block: 10px;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+.header_canvas_inner_container div a {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.header_canvas_inner_container div a:hover{
+    color:rgb(161,54,72)
+}
+
+.header_canvas_inner_container button {
+    color: #fff;
+    background-color: #516CF0;
+    border-radius: 3px;
+    border: none;
+    padding: 6px 10px;
+}
+
+.header_canvas_inner_container button:hover{
+    background-color: #FE8402;
+}
+
+@media(max-width:768px){
+
+    .logo_container a img{
+        max-width: 70%;
+    }
+
+}
