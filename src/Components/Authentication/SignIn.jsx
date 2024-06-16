@@ -70,7 +70,7 @@ function SignIn() {
             localStorage.setItem("token", data.token)
             // console.log(data)
             // navigate('/home')
-            setTimeout(() => { navigate('/home'); window.location.reload(); setProcess(false)}, 3000)
+            setTimeout(() => { navigate('/home'); window.location.reload(); setProcess(false)}, 2000)
               //  navigate('/home')
                
 

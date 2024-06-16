@@ -14,6 +14,8 @@ import programming2 from '../../assets/Image/programming2.png'
 function Question() {
 
      const [data, setData] = useState([])
+     const [searcheddata, setSearchedData] = useState([])
+     const[val,setValue]= useState('')
      const {user}=  useContext(AppState)
      const token = localStorage.getItem('token')
      const [offSet,SetOffSet] = useState(0)
@@ -36,6 +38,24 @@ function Question() {
           }
  }
 
+ async function fetchSearchedData (){
+            
+     try{   
+          const info = await axios.post(`/questions/searchedquestion`,{
+               searchWord:val
+          },
+              { headers:{
+                    Authorization:'Bearer '+ token
+                    }
+              })
+             console.log(info.data)
+          setSearchedData(info.data)
+          }
+          catch (error) {
+                console.log("error", error)
+          }
+ }
+ 
  async function NumberOfQuestion (){
 
      try {
@@ -59,11 +79,16 @@ function Question() {
      
                fetchData()
                NumberOfQuestion()
+               if(val){
+                    fetchSearchedData ()
+               }
+              
 
-     },[,user,offSet,limit])
+     },[,user,offSet,limit,val])
 
 
 //   console.log(data)
+
 // console.log(totalQuestion)
 const listItems = [];
 
@@ -91,8 +116,11 @@ for (let i = 0; i < Math.ceil(totalQuestion/limit); i++) {
             {/* <div className={classes.programming}><img src={programming} alt="" /></div> */}
                     <div className={classes.quest_user_container}>
                          <button><Link to='/question'>Ask Question</Link></button>
+                         
                          <div>Welcome: <span>{user.username}</span> </div>
                     </div>
+
+                    <div className={classes.homepage_search}><input type="search" placeholder='Search' onChange={(e)=>{setValue(e.target.value)}} /></div>
 
                     <div className={classes.questions}>
                         Questions
@@ -100,7 +128,7 @@ for (let i = 0; i < Math.ceil(totalQuestion/limit); i++) {
 
                   <div className={classes.card_wrapper}>
                     {
-                              data?.map((eachquestion, index)=>(
+                              (val?searcheddata:data).map((eachquestion, index)=>(
                                    <Card info={eachquestion} key={index} ansCount ={true} />
                               ))
                          }
