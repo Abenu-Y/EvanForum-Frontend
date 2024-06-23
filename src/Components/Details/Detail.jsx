@@ -17,7 +17,7 @@ import NotFound from '../../Pages/NotFound/NotFound'
 const Detail = () => {
 
   const [postanswer, setPostAnswer] = useState('')
-  const [getanswer, setGetAnswer] = useState([''])
+  const [getanswer, setGetAnswer] = useState([])
   const [getTitleandDescription, setTitleandDescription] = useState([])
   const [isloading , setLoading] =useState(false)
   const{answerdetail} = useParams()

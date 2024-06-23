@@ -1,7 +1,9 @@
 export const stateType = {
     SIGN_IN:'SIGN IN',
     SIGN_UP:'SIGN UP',
-    LOG_OUT:'LOG OUT'
+    LOG_OUT:'LOG OUT',
+    RESET:'RESET',
+    UPDATE:'UPDATE'
 }
 
 export const initialState = {
@@ -21,6 +23,13 @@ export const reducer =(state, action) => {
 
         case stateType.LOG_OUT:
             return {signstate:'LOG OUT'}   
+
+        case stateType.RESET:
+            return {signstate:'RESET'}   
+
+        case stateType.UPDATE:
+            return {signstate:'UPDATE'}   
+
             
          default:
            return state;   

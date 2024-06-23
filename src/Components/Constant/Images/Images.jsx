@@ -5,7 +5,10 @@ import backPic from '../../../assets/Image/BackPic.svg'
 import proicon from '../../../assets/Image/proicon.png'
 
 import pro3 from '../../../assets/Image/pro3.png'
-import pro4 from '../../../assets/Image/pro3.jpg'
+import pro4 from '../../../assets/Image/pro4.png'
+import pro5 from '../../../assets/Image/pro5.png'
+import pro6 from '../../../assets/Image/pro6.jpg'
+import pro7 from '../../../assets/Image/pro7.png'
 
 
 

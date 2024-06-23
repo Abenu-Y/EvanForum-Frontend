@@ -21,6 +21,12 @@ function SignIn() {
     });
   };
 
+  const handleRESET = () => {
+    dispatch({
+      type: stateType.RESET,
+    });
+  };
+
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
@@ -125,9 +131,13 @@ function SignIn() {
                                 
                         </div>
 
+                        <div className={AuthStyle.forgot_outer_container}>
+                              <div className={AuthStyle.forgot} onClick={handleRESET}>Forgot Password?</div>
+                        </div>
+
                         <div className={AuthStyle.btn_container}>
                               <button type="submit">Log In</button>
-                              <p onClick={handleSignState}>Create an account ?</p>
+                              {/* <p onClick={handleSignState}>Create an account ?</p> */}
                         </div>
 
                   </form>

@@ -3,6 +3,8 @@ import AuthStyle from './classes.module.css'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import { SignContext } from '../State/State'
+import Reset from './Reset'
+import Updatepass from './UpdatePass'
 // import  {Navigate}  from 'react-router-dom'
 
 
@@ -19,7 +21,7 @@ const Auth = () => {
             <div className={AuthStyle.auth_inner_container}>
 
                   {
-                    signstate =='SIGN UP' ? <SignUp /> :<SignIn /> 
+                    signstate == 'RESET' ? (<Reset />):(signstate =='UPDATE' ?(<Updatepass />):(signstate =='SIGN UP' ? <SignUp /> :<SignIn />)) 
                   }
 
                   <div className={AuthStyle.content}>

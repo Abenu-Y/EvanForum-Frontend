@@ -51,7 +51,7 @@ function Header() {
                <div className={HeaderStyle.header_inner_container}>
                     
                        <div className={HeaderStyle.logo_container} >
-                            <Link to="/home">
+                            <Link to={`${msg =='valid user'?'/home':'/'}`}>
                                 <img src={Images.BlackLogo} alt="Evangadi Logo" />
                             </Link>
                        </div>

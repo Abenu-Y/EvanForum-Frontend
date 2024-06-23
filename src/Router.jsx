@@ -8,6 +8,7 @@ import AskQUestion from './Components/AskQuestion/AskQUestion'
 import Detail from './Components/Details/Detail'
 import { AnimatePresence } from 'framer-motion'
 import NotFound from './Pages/NotFound/NotFound'
+import Updatepass from './Components/Authentication/UpdatePass'
 
 
 // const baseUrl = `http://localhost:1234/api`

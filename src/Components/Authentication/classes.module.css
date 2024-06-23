@@ -21,18 +21,40 @@
 
 
 .btn_container button,.content button{
-    background-color:orange;
     border: none;
     outline: none;
     color: #fff;
-    padding: 10px 80px;
     border-radius: 4px;
     margin-block: 10px;
     cursor: pointer;
 }
 
+.btn_container button{
+    width: 100%;
+    background-color: #516CF0;
+    padding: 15px 80px;
+    opacity: 0.9;
+}
+
+.btn_container button:hover{
+    opacity: 1;
+}
+
 .content button{
     padding: 10px 40px;
+    background-color:orange;
+}
+
+.forgot_outer_container{
+    position: relative;
+    padding: 15px;
+}
+
+.forgot{
+    position: absolute;
+    right: 10px;
+    color: #da7000;
+    cursor: pointer;
 }
 
 
@@ -54,12 +76,37 @@ form p, form button{
     text-align: center;
 }
 
-.Atitle p:nth-of-type(1){
+
+.Atitle p:nth-of-type(1),.reset_title{
     font-size: 16px;
     line-height: 22px;
     color: rgb(52,71,103);
    font-weight: 700;
 }
+
+.reset_instuction{
+    color: #67748e;
+    margin: 15px 0;
+}
+
+.reset_button button{
+    color: #fff;
+    background-color: #516CF0;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 0;
+    margin: 10px 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.reset_redirect_link{
+    color: #da7000;
+    cursor: pointer;
+    margin: 5px;
+    width:fit-content;
+}
+
 .Atitle p:nth-of-type(2){
     font-size: 16px;
     line-height: 24px;
@@ -73,10 +120,12 @@ form p, form button{
     color: #da7000;
     cursor: pointer;
 }
+
 .btn_container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
 }
 
 
@@ -270,6 +319,32 @@ form p, form button{
     justify-content: center;
   }
 
+
+  .reset_container{
+    background-image: url('../../assets//Image/reset2.jpg');
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px 0;
+  }
+
+  .reset_message{
+    margin: 10px;
+  }
+
+  .reset_title span a{
+    color:#516CF0;
+    text-decoration: none;
+  }
+
+  .reset_goto_link{
+    text-decoration: none;
+    color:#516CF0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
   
   /* ******** fade property ************ */
   @keyframes slideIn {
