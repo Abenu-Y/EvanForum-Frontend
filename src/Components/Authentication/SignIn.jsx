@@ -113,23 +113,27 @@ function SignIn() {
                               <input type={passwordVisible ? "text" : "password"} placeholder="Password"
                                       ref={password}  name="password" />
 
-                                {process && <ThreeDots
+                                
+    
+                              <span className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"}  ${AuthStyle.pwd_toggle}`}
+                                              onClick={togglePasswordVisibility} aria-hidden="true">
+
+                                </span>
+
+                           
+                                
+                        </div>
+
+                        {process && <ThreeDots
                                   visible={true}
-                                  height="80"
-                                  width="80"
+                                  height="40"
+                                  width="40"
                                   color="#516CF0"
                                   radius="6"
                                   ariaLabel="three-dots-loading"
                                   wrapperStyle={{}}
                                   wrapperClass={AuthStyle.ThreeDotsCenter}
                                   />}
-    
-                              <span className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"}  ${AuthStyle.pwd_toggle}`}
-                                              onClick={togglePasswordVisibility} aria-hidden="true">
-
-                                </span>
-                                
-                        </div>
 
                         <div className={AuthStyle.forgot_outer_container}>
                               <div className={AuthStyle.forgot} onClick={handleRESET}>Forgot Password?</div>

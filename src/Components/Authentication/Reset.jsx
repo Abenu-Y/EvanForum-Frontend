@@ -4,11 +4,15 @@ import { SignContext } from '../State/State';
 import { stateType } from "../../Utility/reducer";
 import axios from '../../Utility/axios'
 import ResetImg from '../../assets/Image/reset1.jpg'
+import { ThreeDots } from 'react-loader-spinner'
+
 
 function Reset() {
     const [isAnimating, setIsAnimating] = useState(true);
     const [{ signstate }, dispatch] = useContext(SignContext);
     const [sentResetMessage , SetSentResetMessage]=useState(true)
+    const [process ,setProcess] = useState(false)
+    const [errorMessage , seterrorMessage]=useState('')
     const resetEmail = useRef(null)
 
     const handleReset = async(e) =>{
@@ -16,24 +20,31 @@ function Reset() {
 
         const resetEmailValue = resetEmail.current.value;
 
-        if(!resetEmail){
-            alert('please insert email')
+        if(!resetEmailValue){
+            // alert('please insert email')
+            resetEmail.current.style.border = '0.5px solid red'; 
+
             return ;
         }
 
         try {
+          setProcess(true)
 
             await axios.post('/users/reset',{
                 email:resetEmailValue
             })
 
-            alert('proceed')
+            // alert('proceed')
             SetSentResetMessage(false)
             dispatch({type:stateType.UPDATE})
             
         } catch (error) {
             console.log(error)
-            alert('something went wrong!')
+            setProcess(false)
+            if(error?.response?.data =='Email not found or error updating user'){
+              seterrorMessage('Email not found or not registered with this email address. ')
+            }
+            // alert('something went wrong!')
         }
 
 
@@ -43,9 +54,11 @@ function Reset() {
   return (
     <div className={AuthStyle.form_container}>
          <div className={`${isAnimating ? AuthStyle.slidein : ''}`}>
-            {/* {
-              sentResetMessage ?  */}
-              {/* ( */}
+
+         {
+          errorMessage && <p style={{color:'red',textAlign:'center',marginBottom:'10px'}}>{errorMessage}</p>
+         }
+          
               <form action="" onSubmit={handleReset}>
                       <div className={AuthStyle.reset_title}>Reset your Password</div>
 
@@ -54,6 +67,18 @@ function Reset() {
                       <div>
                         <input type="email" name="" id=""  placeholder='Email Address' ref={resetEmail}/>
                       </div>
+
+                      {process && <ThreeDots
+                                  visible={true}
+                                  height="40"
+                                  width="40"
+                                  color="#516CF0"
+                                  radius="6"
+                                  ariaLabel="three-dots-loading"
+                                  wrapperStyle={{}}
+                                  wrapperClass={AuthStyle.ThreeDotsCenter}
+                                  />
+                      }
 
                       <div className={AuthStyle.reset_button}>
                         <button type='submit'>Reset your Password</button>

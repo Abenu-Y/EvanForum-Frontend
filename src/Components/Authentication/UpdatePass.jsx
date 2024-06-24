@@ -40,18 +40,20 @@ import { stateType } from '../../Utility/reducer';
             newpassword.current.style.border = '0.5px solid red'; 
             return;
          }
+         
+         if(passValue.length < 10 || newPassValue.length < 10){
+             setErrorMessage('Your password should be at least 10 characters long.')
+             return ;
+         }
 
 
-
-        if(passValue != newPassValue){
-             
+        if(passValue != newPassValue){ 
             setErrorMessage('Use the same password to confirm.')
-
             return ;
-
         }
 
         try {
+          setProcess(true)
 
             await axios.post('users/reset/update',{
                    newPassword:newPassValue,
@@ -63,6 +65,10 @@ import { stateType } from '../../Utility/reducer';
             
         } catch (error) {
             console.log(error)
+             setProcess(false)
+            if(error?.response?.data?.msg){
+              setErrorMessage(error?.response?.data?.msg)
+            }
         }
       };
 
@@ -73,7 +79,7 @@ import { stateType } from '../../Utility/reducer';
                 
             <div>
                     <p  className={`${AuthStyle.reset_title} ${AuthStyle.reset_message}`}>
-                        {errorMessage && <p>{errorMessage} </p>
+                        {errorMessage && <p style={{color:'red', marginBottom:'10px'}}>{errorMessage} </p>
                         }
                        A reset link has been sent to your email address: 
                      
@@ -86,15 +92,9 @@ import { stateType } from '../../Utility/reducer';
 
                   <form action="" onSubmit={handleUpdatePassword}>
 
-
                          <div className={AuthStyle.password_toggle_container}>
                                 <input type= "text"  placeholder="Reset Key"
                                       ref={resetkey}  name="resetkey" />
-
-                                <span className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"}  ${AuthStyle.pwd_toggle}`}
-                                              onClick={togglePasswordVisibility} aria-hidden="true">
-
-                                </span>
                         </div>
 
 
@@ -103,21 +103,9 @@ import { stateType } from '../../Utility/reducer';
                               <input type={passwordVisible ? "text" : "password"} placeholder="Password"
                                       ref={password}  name="password" />
 
-                                {process && <ThreeDots
-                                  visible={true}
-                                  height="80"
-                                  width="80"
-                                  color="#516CF0"
-                                  radius="6"
-                                  ariaLabel="three-dots-loading"
-                                  wrapperStyle={{}}
-                                  wrapperClass={AuthStyle.ThreeDotsCenter}
-                                  />}
-    
                               <span className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"}  ${AuthStyle.pwd_toggle}`}
                                               onClick={togglePasswordVisibility} aria-hidden="true">
-
-                                </span>
+                              </span>
                                 
                         </div>
 
@@ -127,11 +115,21 @@ import { stateType } from '../../Utility/reducer';
 
                             <span className={`fa ${passwordVisible ? "fa-eye" : "fa-eye-slash"}  ${AuthStyle.pwd_toggle}`}
                                               onClick={togglePasswordVisibility} aria-hidden="true">
+                            </span>
 
-                                </span>
                         </div>
 
-                      
+                        {process && <ThreeDots
+                                  visible={true}
+                                  height="40"
+                                  width="40"
+                                  color="#516CF0"
+                                  radius="6"
+                                  ariaLabel="three-dots-loading"
+                                  wrapperStyle={{}}
+                                  wrapperClass={AuthStyle.ThreeDotsCenter}
+                                  />
+                          }
 
                         <div className={AuthStyle.btn_container}>
                               <button type="submit">Update Password</button>
